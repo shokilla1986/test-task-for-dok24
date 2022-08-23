@@ -1,18 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  like: false,
-};
-
 const cardSlice = createSlice({
   name: "like",
-  initialState,
+  initialState: {
+    like: false,
+  },
   reducers: {
-    changeLike: (state) => {
+    changeLike(state) {
       state.like = !state.like;
+      console.log(state.like);
     },
   },
 });
 
-export const { like } = cardSlice.actions;
+export const { changeLike } = cardSlice.actions;
 export default cardSlice.reducer;
