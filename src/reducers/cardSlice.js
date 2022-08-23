@@ -1,17 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
+const initialState = {
+  cardsList: [],
+  isLoading: false,
+  error: "",
+};
 
-const cardSlice = createSlice({
-  name: "like",
-  initialState: {
-    like: false,
-  },
+const cardsSlice = createSlice({
+  name: "cardsList",
+  initialState,
   reducers: {
-    changeLike(state) {
-      state.like = !state.like;
-      console.log(state.like);
+    cardsFetching(state) {
+      state.isLoading = true;
+    },
+    cardsFetchingSuccess(state, action) {
+      state.isLoading = false;
+      state.error = "";
+      state.cardsList = action.payload;
+    },
+    cardsFetchingError(state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
     },
   },
 });
 
-export const { changeLike } = cardSlice.actions;
-export default cardSlice.reducer;
+export const { cardsFetching, cardsFetchingSuccess, cardsFetchingError } =
+  cardsSlice.actions;
+export default cardsSlice.reducer;
