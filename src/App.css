@@ -7,3 +7,42 @@
   display: flex;
   justify-content: center;
 }
+
+.cardsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+
+/* .like {
+  border: 5px groove red;
+  padding: 1px;
+} */
+
+.div-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  width: 10%;
+  border-radius: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.btn-unlikes::before {
+  content: "\2764";
+  color: red;
+}
+
+.btn-likes::before {
+  content: "\2661";
+}
