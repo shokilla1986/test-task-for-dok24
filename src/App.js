@@ -1,18 +1,13 @@
 import "./App.css";
 import Card from "./components/Card";
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { fetchCards } from "./reducers/actionCreator";
+import CardList from "./components/CardList";
 
 function App() {
-  const dispatch = useDispatch();
-  const { cardsList } = useSelector((state) => state.cards);
-
-  useEffect(() => {
-    dispatch(fetchCards());
-  }, []);
-
-  return <div className="App">{JSON.stringify(cardsList)}</div>;
+  return (
+    <div className="App">
+      <CardList />
+    </div>
+  );
 }
 
 export default App;

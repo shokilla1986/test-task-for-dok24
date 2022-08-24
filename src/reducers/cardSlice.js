@@ -11,15 +11,18 @@ const cardsSlice = createSlice({
   reducers: {
     cardsFetching(state) {
       state.isLoading = true;
+      console.log("loading", state.cardsList);
     },
     cardsFetchingSuccess(state, action) {
       state.isLoading = false;
       state.error = "";
       state.cardsList = action.payload;
+      console.log("success:", state.cardsList);
     },
     cardsFetchingError(state, action) {
       state.isLoading = false;
       state.error = action.payload;
+      console.log("error", state.cardsList);
     },
   },
 });
