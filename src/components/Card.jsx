@@ -5,7 +5,6 @@ const Card = ({ card, remove, like }) => {
   const dispatch = useDispatch();
 
   function changeLike() {
-    // setLikeCard((prev) => !prev);
     dispatch(like(card.id));
   }
 

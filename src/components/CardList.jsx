@@ -1,18 +1,10 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { fetchCards } from "../reducers/actionCreator";
+import { useSelector } from "react-redux";
 import Card from "./Card";
 import { deleteCard, changeLikeCard } from "../reducers/cardSlice";
 
 const CardList = () => {
   const { cardsList, isLoading, error } = useSelector((state) => state.cards);
-  const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(fetchCards());
-  // }, []);
-  console.log("CardList: ", cardsList);
 
   return (
     <div className="cardsList">
