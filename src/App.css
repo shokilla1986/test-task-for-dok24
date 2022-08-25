@@ -5,7 +5,9 @@
 
 .App {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center
 }
 
 .cardsList {
@@ -36,6 +38,11 @@ button {
   border: none;
   background: none;
   cursor: pointer;
+}
+
+.btn-show {
+  width: 30%;
+  border: 1px solid black;
 }
 
 .btn-unlikes::before {
